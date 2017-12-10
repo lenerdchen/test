@@ -14492,6 +14492,32 @@ window.$ = _jquery2.default;
 
 (0, _jquery2.default)(document).foundation();
 
+//smooth scrolling
+(0, _jquery2.default)(document).ready(function () {
+  // Add smooth scrolling to all links
+  (0, _jquery2.default)("a").on('click', function (event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      (0, _jquery2.default)('html, body').animate({
+        scrollTop: (0, _jquery2.default)(hash).offset().top
+      }, 800, function () {
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
 /***/ }),
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
