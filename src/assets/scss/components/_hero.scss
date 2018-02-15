@@ -1,4 +1,8 @@
-$hero-height: 55em;
+$hero-height: 40em;
+
+@include breakpoint(medium down) {
+  $hero-height:30em;
+}
 
 .hero {
   background: url("/assets/img/splash2.jpeg") bottom center;
@@ -8,13 +12,49 @@ $hero-height: 55em;
   display: flex;
   padding: 2em;
   align-items: center;
-}
 
-.emphasise {
-  h1 {
+  .hero-wrapper {
+    margin: 5em;
+
+    @include breakpoint(medium down) {
+      margin: 0em;
+    }
+  }
+
+  .explainer{
+    margin-right: 20px;
+  }
+  .name {
+    align-items: flex-end;
+  }
+
+  .hero-text{
+    text-shadow: 1px 1px $white;
+  }
+
+  .emphasise {
     color: $blue;
   }
+
   h2 {
-    color: $blue;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
   }
+
+  h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+
+    @include breakpoint(medium down) {
+      font-size: 2em;
+    }
+
+    @include breakpoint(small down) {
+      font-size: 1.3em;
+    }
+  }
+
+
+
 }
