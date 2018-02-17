@@ -1,17 +1,17 @@
-$hero-height: 40em;
-
-@include breakpoint(medium down) {
-  $hero-height:30em;
-}
-
 .hero {
   background: url("../img/splash2.jpeg") bottom center;
   background-attachment: fixed;
-  height: $hero-height;
+  min-height: 50em;
+  height: 100vh;
   background-size: cover;
   display: flex;
   padding: 2em;
   align-items: center;
+
+  @include breakpoint(medium down) {
+    min-height: 30em;
+    height: 100vh;
+  }
 
   .hero-wrapper {
     margin: 5em;
@@ -22,10 +22,12 @@ $hero-height: 40em;
   }
 
   .explainer{
-    margin-right: 20px;
+    padding-bottom: 0;
   }
   .name {
     align-items: flex-end;
+    padding-top: 0;
+    padding-bottom: 1em;
   }
 
   .hero-text{
