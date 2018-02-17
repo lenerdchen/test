@@ -1,13 +1,54 @@
 .header {
-  a {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 0.9em;
-    font-weight: 500;
+  background-color: white;
+  padding-top: .5em;
+  padding-bottom: .5em;
+
+  .name {
+    margin-top: .5em;
+
+    & a {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.9em;
+      font-weight: 500;
+      color: $black;
+      margin-top: 0;
+    }
+
+    & a:hover {
+      border-bottom: 2px solid $black;
+      display: inline-block;
+      line-height: 1.2em;
+    }
   }
 
-  a:hover {
-    border-bottom: 2px solid $blue;
-    display: inline-block;
-    line-height: 1em;
+  .links {
+    text-align: right;
+    margin-top: .5em;
+
+    @include breakpoint (small down) {
+      text-align: left;
+    }
+
+    & a {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.9em;
+      font-weight: 500;
+      margin-top: 0;
+      margin-left: 2em;
+
+      @include breakpoint (small down) {
+        margin-left: 0;
+        margin-right: 2em;
+      }
+    }
+
+    & a:hover {
+      border-bottom: 2px solid $blue;
+      display: inline-block;
+      line-height: 1.2em;
+    }
+
   }
+
+
 }
