@@ -35,6 +35,28 @@
     }
   }
 
+  .work-part {
+    padding-bottom: 10em;
+    min-height: 60vh;
+
+  }
+
+  .work-card {
+    border-radius: 10px;
+    border-color: $light-gray;
+    border-width: 1px;
+
+    & a:hover {
+      border-bottom: 0;
+    }
+  }
+
+  .project-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-bottom: 1em;
+  }
+
 }
 
 .float:hover {
