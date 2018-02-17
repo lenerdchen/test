@@ -14492,30 +14492,27 @@ window.$ = _jquery2.default;
 
 (0, _jquery2.default)(document).foundation();
 
-//smooth scrolling
-(0, _jquery2.default)(document).ready(function () {
-  // Add smooth scrolling to all links
-  (0, _jquery2.default)("a").on('click', function (event) {
+// filter handling for a /dir/ OR /indexordefault.page
+function filterPath(string) {
+  return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
+}
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      (0, _jquery2.default)('html, body').animate({
-        scrollTop: (0, _jquery2.default)(hash).offset().top
-      }, 800, function () {
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
+var locationPath = filterPath(location.pathname);
+(0, _jquery2.default)('a[href*="#"]').each(function () {
+  var thisPath = filterPath(this.pathname) || locationPath;
+  var hash = this.hash;
+  if ((0, _jquery2.default)("#" + hash.replace(/#/, '')).length) {
+    if (locationPath == thisPath && (location.hostname == this.hostname || !this.hostname) && this.hash.replace(/#/, '')) {
+      var $target = (0, _jquery2.default)(hash),
+          target = this.hash;
+      if (target) {
+        (0, _jquery2.default)(this).click(function (event) {
+          event.preventDefault();
+          (0, _jquery2.default)('html, body').animate({ scrollTop: $target.offset().top }, 1000);
+        });
+      }
+    }
+  }
 });
 
 /***/ }),

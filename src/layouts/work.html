@@ -1,3 +1,4 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -6,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lenerdchen</title>
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Work+Sans" rel="stylesheet">
   </head>
   <body>
@@ -16,102 +17,15 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#work">Work</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#collab">Collaborate</a></li>
+          <li><a href="{{root}}index.html">Back</a></li>
         </ul>
       </div>
     </div>
   </div>
     <!-- End Top Bar -->
 
-    
-    <div class="row content">
-      <div class="columns">
-        <div class="row">
-          <div class="medium-9 columns">
-            <h3>Applying Behavioural Science to User Experience Design</h3><br><br>
-          </div>
-        </div>
-    
-        <div class="row">
-          <div class="small-12 medium-9 columns">
-            <div class="card work-title-image">
-              <img src="assets/img/work1.png">
-            </div>
-          </div>
-        </div>
-    
-        <div class="row work-section">
-          <div class="small-12 columns">
-            <h4>What was the problem?</h4>
-            <p>Some filler text.</p>
-            <p>Some more filler text.</p>
-            <p>Some lists:</p>
-            <ul>
-              <li>Defining item 1</li>
-              <li>Researching item 2</li>
-              <li>Designing item 3</li>
-              <li>Testing item 4</li>
-            </ul>
-          </div>
-        </div>
-    
-        <div class="row work-section">
-          <div class="small-12 columns">
-            <h4>What did we do?</h4>
-            <p>Some filler text.</p>
-            <p>Some more filler text.</p>
-            <p>Some lists:</p>
-            <ul>
-              <li>Defining item 1</li>
-              <li>Researching item 2</li>
-              <li>Designing item 3</li>
-              <li>Testing item 4</li>
-            </ul>
-          </div>
-        </div>
-    
-        <div class="row work-section">
-          <div class="small-12 columns">
-            <h4>What did we achieve?</h4>
-            <p>Some filler text.</p>
-            <p>Some more filler text.</p>
-            <p>Some lists:</p>
-            <ul>
-              <li>Defining item 1</li>
-              <li>Researching item 2</li>
-              <li>Designing item 3</li>
-              <li>Testing item 4</li>
-            </ul>
-          </div>
-        </div>
-    
-      </div>
-    </div>
-    
-    <div class="row content">
-      <div class="columns">
-        <div class="row">
-          <div class="medium-9 columns">
-            <h3>Other works</h3><br>
-            <p>
-              <ul>
-                <li>
-                  <a href="work2.html">'Nudging' households</a> to use digital payment modes</a>
-                </li>
-                <li>
-                  <a href="work3.html">Studying factors</a> that increase altruistic behaviour</a>
-                </li>
-              </ul>
-            </p>
-          </div>
-        </div>
-    
-      </div>
-    </div>
-    
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+    {{> body}}
 
     <div class="row footer">
       <div class="columns">
@@ -165,6 +79,6 @@
       </ul>
       </div>
     </div>
-    <script src="assets/js/app.js"></script>
+    <script src="{{root}}assets/js/app.js"></script>
   </body>
 </html>
